@@ -21,5 +21,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.COLORS.GRAY_500,
     alignItems: "center",
     justifyContent: "center",
+    paddingBottom: 67,
+    paddingTop: 57,
   },
 });
