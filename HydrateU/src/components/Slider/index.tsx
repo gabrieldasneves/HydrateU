@@ -1,17 +1,30 @@
 import { StyleSheet, Text, View } from "react-native";
 import theme from "../../theme";
-import { useState } from "react";
+import Slider from "@react-native-community/slider";
 
-export function SliderComponent() {
-  const [sliderValue, setSliderValue] = useState(30);
+type Props = {
+  title: string;
+};
 
-  return <View style={styles.container}></View>;
+export function SliderComponent({ title }: Props) {
+  return (
+    <View>
+      <Text style={styles.sliderTitle}>{title}</Text>
+      <Slider
+        style={{ width: 320 }}
+        minimumValue={0}
+        maximumValue={1}
+        minimumTrackTintColor={theme.COLORS.BLUE}
+        maximumTrackTintColor={theme.COLORS.GRAY_200}
+        thumbTintColor={theme.COLORS.BLUE}
+      />
+    </View>
+  );
 }
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+  sliderTitle: {
+    textAlign: "left",
+    color: theme.COLORS.BLUE_DARK,
+    marginBottom: 9,
   },
 });

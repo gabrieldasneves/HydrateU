@@ -8,10 +8,17 @@ import { SliderComponent } from "../../components/Slider";
 export default function Main() {
   return (
     <View style={styles.container}>
-      <Header />
-      <Card />
-      <SliderComponent />
-      <StartButton />
+      <View style={styles.headerComponent}>
+        <Header />
+      </View>
+      <View style={styles.body}>
+        <Card />
+        <View style={styles.sliderGroup}>
+          <SliderComponent title="ml per day" />
+          <SliderComponent title="ml per timer" />
+        </View>
+        <StartButton />
+      </View>
     </View>
   );
 }
@@ -24,5 +31,15 @@ const styles = StyleSheet.create({
   },
   header: {
     color: theme.COLORS.GRAY_100,
+  },
+  headerComponent: {
+    marginBottom: 64,
+  },
+  body: {
+    alignItems: "center",
+  },
+  sliderGroup: {
+    marginVertical: 27,
+    gap: 27,
   },
 });
