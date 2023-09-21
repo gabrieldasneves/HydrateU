@@ -4,6 +4,7 @@ import { Card } from "../../components/Card";
 import { StartButton } from "../../components/StartButton";
 import { Header } from "../../components/Header";
 import { SliderComponent } from "../../components/Slider";
+import { Timer } from "../../components/Timer";
 
 export default function Main() {
   return (
@@ -17,6 +18,7 @@ export default function Main() {
           <SliderComponent title="ml per day" />
           <SliderComponent title="ml per timer" />
         </View>
+        <Timer />
         <StartButton />
       </View>
     </View>
