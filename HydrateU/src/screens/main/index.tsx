@@ -5,18 +5,21 @@ import { StartButton } from "../../components/StartButton";
 import { Header } from "../../components/Header";
 import { SliderComponent } from "../../components/Slider";
 import { Timer } from "../../components/Timer";
+import { useState } from "react";
 
 export default function Main() {
+  const [goal, setGoal] = useState(0);
+  let formattedGoal = Math.round(goal);
+
   return (
     <View style={styles.container}>
       <View style={styles.headerComponent}>
         <Header />
       </View>
       <View style={styles.body}>
-        <Card />
+        <Card goal={formattedGoal} />
         <View style={styles.sliderGroup}>
-          <SliderComponent title="ml per day" />
-          <SliderComponent title="ml per timer" />
+          <SliderComponent title="ml per day" setValue={setGoal} />
         </View>
         <Timer />
         <StartButton />

@@ -2,14 +2,18 @@ import { Image, StyleSheet, Text, View } from "react-native";
 import theme from "../../theme";
 import waterImage from "../../../assets/water.png";
 
-export function Card() {
+type Props = {
+  goal: number;
+};
+
+export function Card({ goal }: Props) {
   return (
     <View style={styles.card}>
       <Text style={styles.upperHeader}>80%</Text>
       <Image source={waterImage} style={styles.image} />
       <View style={styles.underImageText}>
         <Text style={styles.header}>Drink Water</Text>
-        <Text style={styles.subHeader}>goal: 3L</Text>
+        <Text style={styles.subHeader}>goal: {goal}</Text>
       </View>
     </View>
   );
